@@ -1,3 +1,4 @@
+full: true
 plugins:
   - cleanupAttrs: true
   - removeDoctype: true

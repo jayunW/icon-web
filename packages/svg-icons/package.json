@@ -13,9 +13,11 @@
     "svg"
   ],
   "scripts": {
-    "optimize": "svgo svg/*.svg --config=.svgo.yml --pretty",
-    "prepublish": "yarn optimize",
-    "sprite:svg": "svg-sprite --config sprite.json svg/*.svg & http-server -p 9000 ./dist"
+    "optimize": "svgo svg/*.svg --config=./.svgo.yml --pretty",
+    "build": "svgo -f svg -o ./dist/icons --config=.svgo.yml --pretty",
+    "build-dev": "svgo -f svg -o test.min.svg",
+    "start": "svg-sprite --config sprite.json svg/*.svg & http-server -p 9000 ./dist",
+    "prepublish": "yarn build"
   },
   "dependencies":{
     "svg-sprite": "^1.5.0"
